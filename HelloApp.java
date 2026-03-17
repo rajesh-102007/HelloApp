@@ -1,16 +1,12 @@
 /**
  * @author [A Rajesh Kanna]
- * @version 1.0 UC2: Display Hello with Command-Line Argument
+ * @version 1.0 UC3
  */
-public class HelloApp {
-    public static void main(String[] args) {
-
-        if (args.length > 0) {
-
-            String name = args[0];
-            System.out.println("Hello, " + name + "!");
-        } else {
-            System.out.println("Hello, World!");
-        }
+class UseCase3
+{
+    public static void main(String args[])
+    {
+        String name = (args.length > 0) ? args[0] : "World";
+        System.out.println("Hello, "+name+"!");
     }
 }
