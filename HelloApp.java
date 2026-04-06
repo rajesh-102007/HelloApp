@@ -1,24 +1,21 @@
-public class UseCase5 {
+/**
+ * @author [A Rajesh Kanna]
+ * @version UC6: Display "Hello" with Multiple Command-Line Arguments using substring to Remove Trailing Delimiter
+ */   
+public class HelloApp {
     public static void main(String[] args) {
-        String name;
-
-        if (args.length > 0) {
+        if (args.length == 0) {
+            System.out.println("Hello, World!");
+        } 
+        else {
             StringBuilder nameBuilder = new StringBuilder();
-            boolean first = true;
 
-            for (String n : args) {
-                if (!first) {
-                    nameBuilder.append(", ");
-                }
-                nameBuilder.append(n);
-                first = false;
+            for (String name : args) {
+                nameBuilder.append(name).append(", ");
             }
+            String finalNames = nameBuilder.substring(0, nameBuilder.length() - 2);
 
-            name = nameBuilder.toString();
-        } else {
-            name = "World"; // Default message
+            System.out.println("Hello, " + finalNames + "!");
         }
-
-        System.out.println("Hello, " + name + "!");
     }
 }
